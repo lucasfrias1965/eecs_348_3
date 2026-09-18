@@ -1,0 +1,36 @@
+<style>
+    body {
+        background-color: black;
+        font: Verdana;
+    }
+</style>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Asset&display=swap" rel="stylesheet">
+
+
+<h1 style="color: green">gimme your icloud password</h1>
+
+
+<script>
+
+    function get_pword(){
+        let pword_1 = document.getElementById("pword1").value;
+        let pword_2 = document.getElementById("pword2").value;
+        if ( (pword_1.length + pword_2.length) < 16){
+            window.alert("passwords are too small. nice try :)");
+            return;
+        }
+        if (pword_1 != pword_2){
+            window.alert("passwords dont match sorry");
+            return;
+        }
+        window.alert("got your password!! passed correct");
+    }
+</script>
+
+
+<input type="text" id="pword1" placeholder="input the passwordddd"></input>
+<input type="text" id="pword2" placeholder="input it again"></input>
+<input type="submit" onclick="get_pword()" valivalue="send me your password">

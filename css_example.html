@@ -1,0 +1,97 @@
+<title></title>
+
+<style>
+body{
+    background-image: url("beaver.jpeg");
+}
+</style>
+<h1>Baby by justin beaver</h1>
+
+<input id="rgb_text" type="text"></input>
+
+
+<input type="submit" value="Click me to make it RGB" onclick="changeFontText()"></input>
+<script>
+
+    function changeFontText(){
+        let textEl = document.getElementById("moderndayshakespeare");
+        let rgb_text = document.getElementById("rgb_text").value;
+        rgb_text_parts = rgb_text.replace("(", "").replace(")").replace(" ", "").split(",");
+        console.log("\"" + rgb_text_parts[2]+ "\"");
+        let r = Number(rgb_text_parts[0]);
+        let g = Number(rgb_text_parts[1].replace(",", ""));
+        let b = Number(rgb_text_parts[2].replace("undefined", ""));
+        if (r == NaN || b == NaN || g == NaN){
+            window.alert("hey there its justin. that's not the right way to format the input. try again i believe in you -- justin");
+        }
+        console.log(r);
+        console.log(g);
+        console.log(b);
+        textEl.style.color = `rgb(${r}, ${g}, ${b})`;
+
+
+    }
+</script>
+<h1 color="red">PUT YOUR INPUT LIKE "(R,G,B)"</h1>
+
+
+
+<p id="moderndayshakespeare">
+Oh, whoa<br>
+Oh, whoa <br>
+Oh, whoa <br>
+You know you love me (yo), I know you care (uh-huh) <br>
+Just shout whenever (yo), and I'll be there (uh-huh) <br>
+You are my love (yo), you are my heart (uh-huh) <br>
+And we will never, ever, ever be apart (yo, uh-huh) <br>
+Are we an item? (Yo) girl, quit playin' (uh-huh) <br>
+"We're just friends" (yo), what are you sayin'? (Uh-huh) <br>
+Said, "There's another" (yo), and looked right in my eyes (uh-huh) <br>
+My first love broke my heart for the first time (yo), and I was like (uh-huh) <br>
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh <br>
+I thought you'd always be mine, mine <br>
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh <br>
+I thought you'd always be mine, mine <br>
+Oh, for you, I would've done whatever (uh-huh) <br>
+And I just can't believe we ain't together (yo, uh-huh) <br>
+And I wanna play it cool (yo), but I'm losin' you (uh-huh) <br>
+I'll buy you anything (yo), I'll buy you any ring (uh-huh) <br>
+And I'm in pieces (yo), baby, fix me (uh-huh) <br>
+And just shake me 'til you wake me from this bad dream (yo, uh-huh) <br>
+I'm goin' down (yo), down, down, down (uh-huh) <br>
+And I just can't believe my first love won't be around, and I'm like <br>
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh <br>
+I thought you'd always be mine, mine <br>placeholder
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh <br>
+I thought you'd always be mine, mine <br>
+You can give all of your love <br>
+But sometimes it won't be enough <br>
+Nobody told me this day would come <br>
+Now I'm all gone <br>
+You can give all of your love <br>
+But sometimes it just ain't enough <br>
+Never told me this day would come <br>
+Now I'm all gone <br>
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh  <br>
+I thought you'd always be mine, mine <br>
+Baby, baby, baby, oh <br>
+Like baby, baby, baby, no <br>
+Like baby, baby, baby, oh <br>
+I thought you'd always be mine, mine <br>
+I'm gone (yeah-yeah-yeah, yeah-yeah-yeah) <br>
+Now I'm all gone (yeah-yeah-yeah, yeah-yeah-yeah) <br>
+Now I'm all gone (yeah-yeah-yeah, yeah-yeah-yeah) <br>
+Now I'm all gone (gone, gone, gone, gone), I'm gone <br>
+</p>
+
+
