@@ -2,12 +2,15 @@
 
 <style>
 body{
-    background-image: url("beaver.jpeg");
+    background-color: black;
 }
 </style>
 <h1>Baby by justin beaver</h1>
-
+<img src="beaver.jpeg"></img>
+<br>
 <input id="rgb_text" type="text"></input>
+<input id="border_size" min="1" max="100" type="number"></input>
+
 
 
 <input type="submit" value="Click me to make it RGB" onclick="changeFontText()"></input>
@@ -15,8 +18,12 @@ body{
 
     function changeFontText(){
         let textEl = document.getElementById("moderndayshakespeare");
+        let borderEl = document.getElementById("bigniceborder");
         let rgb_text = document.getElementById("rgb_text").value;
+        let border_size = document.getElementById("border_size").valueAsNumber;
         rgb_text_parts = rgb_text.replace("(", "").replace(")").replace(" ", "").split(",");
+
+        try {
         console.log("\"" + rgb_text_parts[2]+ "\"");
         let r = Number(rgb_text_parts[0]);
         let g = Number(rgb_text_parts[1].replace(",", ""));
@@ -24,11 +31,17 @@ body{
         if (r == NaN || b == NaN || g == NaN){
             window.alert("hey there its justin. that's not the right way to format the input. try again i believe in you -- justin");
         }
+
         console.log(r);
         console.log(g);
         console.log(b);
         textEl.style.color = `rgb(${r}, ${g}, ${b})`;
-
+        borderEl.style.color = `rgb(${r}, ${g}, ${b})`;
+        }
+        catch {
+            window.alert("hey there its justin. that's not the right way to format the input. try again i believe in you -- justin");
+        }
+        borderEl.style.width = `${border_size}%`;
 
     }
 </script>
@@ -36,7 +49,9 @@ body{
 
 
 
-<p id="moderndayshakespeare">
+<hr id="bigniceborder">
+<div id="moderndayshakespeare">
+<p>
 Oh, whoa<br>
 Oh, whoa <br>
 Oh, whoa <br>
