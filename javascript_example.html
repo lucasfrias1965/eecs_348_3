@@ -16,16 +16,23 @@
 <script>
 
     function get_pword(){
+        //first get the element values 
         let pword_1 = document.getElementById("pword1").value;
         let pword_2 = document.getElementById("pword2").value;
+        //if their combined length is not 16 (i did this to be cheeky because if they're the same password, their len
+        //must be equal, and we'll still error out if they put a really big password over a little passowrd. we don't have
+        //a specified order to evaluate how wrong their input is, hence this tricky
         if ( (pword_1.length + pword_2.length) < 16){
             window.alert("passwords are too small. nice try :)");
+            //return early
             return;
         }
-        if (pword_1 != pword_2){
+        if (pword_1 != pword_2){//check if the password match
             window.alert("passwords dont match sorry");
             return;
         }
+
+        //we didn't return which means we must be all good
         window.alert("got your password!! passed correct");
     }
 </script>

@@ -1,5 +1,11 @@
 <title></title>
-
+<!---
+    hey mr zhe. this JS code is pretty bad. just warning you
+    also the rubric wasn't really clear about having a seperate color picker
+    for the border and the text or the border, and the text (oxford comma)
+    i combined them into both
+    -- lucas
+--->
 <style>
 body{
     background-color: black;
@@ -17,30 +23,36 @@ body{
 <script>
 
     function changeFontText(){
+        //okay let's get all our elements
         let textEl = document.getElementById("moderndayshakespeare");
         let borderEl = document.getElementById("bigniceborder");
+
+        //and lets get the usable values
         let rgb_text = document.getElementById("rgb_text").value;
         let border_size = document.getElementById("border_size").valueAsNumber;
+        //try our very best to parse the text
         rgb_text_parts = rgb_text.replace("(", "").replace(")").replace(" ", "").split(",");
 
+        //do a big try statement for this inptu
         try {
-        console.log("\"" + rgb_text_parts[2]+ "\"");
-        let r = Number(rgb_text_parts[0]);
-        let g = Number(rgb_text_parts[1].replace(",", ""));
-        let b = Number(rgb_text_parts[2].replace("undefined", ""));
-        if (r == NaN || b == NaN || g == NaN){
-            window.alert("hey there its justin. that's not the right way to format the input. try again i believe in you -- justin");
-        }
+            //alright now we're trying to fingure out the input
+            console.log("\"" + rgb_text_parts[2]+ "\"");
 
-        console.log(r);
-        console.log(g);
-        console.log(b);
-        textEl.style.color = `rgb(${r}, ${g}, ${b})`;
-        borderEl.style.color = `rgb(${r}, ${g}, ${b})`;
+            //lets get each component seperately
+            let r = Number(rgb_text_parts[0]);
+            let g = Number(rgb_text_parts[1].replace(",", ""));
+            //why is there an undefined that gets added at the end? idk
+            let b = Number(rgb_text_parts[2].replace("undefined", ""));
+    
+            //set both colors by text parsing with those weird bacticks
+            textEl.style.color = `rgb(${r}, ${g}, ${b})`;
+            borderEl.style.color = `rgb(${r}, ${g}, ${b})`;
         }
         catch {
+            //inspirational message from justin. if you get this, just make sure you type (123,0,123) or someother
             window.alert("hey there its justin. that's not the right way to format the input. try again i believe in you -- justin");
         }
+        //we can have invalid input and still set an input size
         borderEl.style.width = `${border_size}%`;
 
     }
